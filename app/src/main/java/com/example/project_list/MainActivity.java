@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             Type listType = new TypeToken<List<Pokemon>>(){}.getType();
             return gson.fromJson(jsonPokemon, listType);
         }
-
     }
 
     private void showList(List<Pokemon> pokemonList) {
