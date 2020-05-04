@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -33,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private Gson gson;
 
+    private boolean haveInternetConnection(){
+        // Fonction haveInternetConnection : return true si connecté, return false dans le cas contraire
+        NetworkInfo network = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+
+        if (network==null || !network.isConnected()){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<Pokemon> pokemonList = getDataFromCache();
 
-        if(pokemonList != null){
+        if(pokemonList != null && haveInternetConnection() == true){
             showList(pokemonList);
         }else{
             makeApiCall();
@@ -97,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         Call<RestPokemonResponse> call = pokeApi.getPokemonResponse();
         call.enqueue(new Callback<RestPokemonResponse>() {
+
             @Override
             public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
                 if(response.isSuccessful() && response.body() != null){
