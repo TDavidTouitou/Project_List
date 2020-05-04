@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Gson gson;
 
     private boolean haveInternetConnection(){
-        // Fonction haveInternetConnection : return true si connecté, return false dans le cas contraire
+        //return true si connecté, return false dans le cas contraire
         NetworkInfo network = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 
         if (network==null || !network.isConnected()){
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<Pokemon> pokemonList = getDataFromCache();
 
-        if(pokemonList != null && haveInternetConnection() == true){
+        if(pokemonList != null && haveInternetConnection() != true){
             showList(pokemonList);
         }else{
             makeApiCall();
