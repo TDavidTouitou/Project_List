@@ -1,4 +1,4 @@
-package com.example.project_list;
+package com.example.project_list.presentation.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +11,10 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.project_list.R;
+import com.example.project_list.data.PokeApi;
+import com.example.project_list.presentation.model.Pokemon;
+import com.example.project_list.presentation.model.RestPokemonResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
