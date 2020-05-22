@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Project_List</string>
+    <string name="details_text_description">Ecran details</string>
 </resources>
