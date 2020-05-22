@@ -2,8 +2,8 @@ package com.example.project_list.presentation.controller;
 
 import android.content.SharedPreferences;
 
-import com.example.project_list.Singletons;
 import com.example.project_list.Constants;
+import com.example.project_list.Singletons;
 import com.example.project_list.presentation.model.Pokemon;
 import com.example.project_list.presentation.model.RestPokemonResponse;
 import com.example.project_list.presentation.view.MainActivity;
@@ -82,8 +82,6 @@ public class MainController {
                 .edit()
                 .putString(Constants.KEY_POKEMON_LIST, jsonString)
                 .apply();
-        //Toast.makeText("List Saved", this, Toast.LENGTH_SHORT).show();
-
     }
 
     private List<Pokemon> getDataFromCache() {
@@ -99,13 +97,5 @@ public class MainController {
 
     public void onItemClick(Pokemon pokemon){
         view.navigateToDetails(pokemon);
-    }
-
-    public void onButtonAClick(){
-
-    }
-
-    public void onButtonBClick(){
-
     }
 }

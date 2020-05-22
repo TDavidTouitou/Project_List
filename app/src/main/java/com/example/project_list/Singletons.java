@@ -14,7 +14,8 @@ public class Singletons {
 
     private static Gson gsonInstance;
     private static PokeApi pokeApiInstance;
-    private static SharedPreferences sharedPreferencesInstances;
+    private static SharedPreferences sharedPreferencesInstance;
+    //private static SystemService systemServiceInstance;
 
     public static Gson getGson(){
         if(gsonInstance == null){
@@ -38,9 +39,16 @@ public class Singletons {
     }
 
     public static SharedPreferences getsharedPreferences(Context context){
-        if(sharedPreferencesInstances == null){
-            sharedPreferencesInstances = context.getSharedPreferences("application_Pokedex", Context.MODE_PRIVATE);
+        if(sharedPreferencesInstance == null){
+            sharedPreferencesInstance = context.getSharedPreferences("application_Pokedex", Context.MODE_PRIVATE);
         }
-        return sharedPreferencesInstances;
+        return sharedPreferencesInstance;
     }
+
+    /*public static SystemService getSystemService(Context context){
+        if(systemServiceInstance == null){
+            systemServiceInstance = context.getSystemService("application_Pokedex", Context.MODE_PRIVATE);
+        }
+        return systemServiceInstance;
+    }*/
 }

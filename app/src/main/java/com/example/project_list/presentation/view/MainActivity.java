@@ -1,12 +1,12 @@
 package com.example.project_list.presentation.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_list.R;
 import com.example.project_list.Singletons;
@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 Singletons.getsharedPreferences(getApplicationContext())
         );
         controller.onStart();
-
-        //showList();
-
     }
 
     public void showList(List<Pokemon> pokemonList) {
