@@ -8,6 +8,14 @@ Réalisation dans le cadre d'un projet de 3ème année au sein de l'ESIEA d'une 
 - Un **deuxième écran** pour chaque item affichant ses données
 - Appel WebService à une **API Rest**
 - Stockage des données en **cache**
-- Architecture MVC et singletons
+- **Architecture** MVC et singletons
 
 ## Caractéristiques
+
+### Ecran d'accueil avec la liste de pokémons.
+
+<img src="images/MainScreen.jpg" width="250">
+
+### Ecran qui affiche les détails du pokémon choisi.
+
+<img src="images/DetailsScreen.jpg" width="250">
