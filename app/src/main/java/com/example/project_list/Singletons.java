@@ -15,6 +15,7 @@ public class Singletons {
     private static Gson gsonInstance;
     private static PokeApi pokeApiInstance;
     private static SharedPreferences sharedPreferencesInstance;
+    private static PokeApi pokeApiDetailsInstance;
     //private static SystemService systemServiceInstance;
 
     public static Gson getGson(){
@@ -38,7 +39,7 @@ public class Singletons {
         return pokeApiInstance;
     }
 
-    public static SharedPreferences getsharedPreferences(Context context){
+    public static SharedPreferences getSharedPreferences(Context context){
         if(sharedPreferencesInstance == null){
             sharedPreferencesInstance = context.getSharedPreferences("application_Pokedex", Context.MODE_PRIVATE);
         }

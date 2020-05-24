@@ -85,7 +85,7 @@ public class MainController {
     }
 
     private List<Pokemon> getDataFromCache() {
-        String jsonPokemon = sharedPreferences.getString("jsonPokemonList", null);
+        String jsonPokemon = sharedPreferences.getString(Constants.KEY_POKEMON_LIST, null);
 
         if(jsonPokemon == null){
             return null;

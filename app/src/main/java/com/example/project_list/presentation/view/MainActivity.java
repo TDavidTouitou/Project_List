@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         controller =new MainController(
                 this,
                 Singletons.getGson(),
-                Singletons.getsharedPreferences(getApplicationContext())
+                Singletons.getSharedPreferences(getApplicationContext())
         );
         controller.onStart();
     }
