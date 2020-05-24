@@ -11,3 +11,11 @@ Réalisation dans le cadre d'un projet de 3ème année au sein de l'ESIEA d'une 
 - Architecture MVC et singletons
 
 ## Caractéristiques
+
+### Ecran d'accueil avec la liste de pokémons.
+
+<img src="images/MainScreen.jpg" width="250">
+
+### Ecran qui affiche les détails du pokémon choisi.
+
+<img src="images/DetailsScreen.jpg" width="250">
