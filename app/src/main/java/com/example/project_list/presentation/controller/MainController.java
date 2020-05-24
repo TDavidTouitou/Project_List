@@ -1,6 +1,9 @@
 package com.example.project_list.presentation.controller;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import com.example.project_list.Constants;
 import com.example.project_list.Singletons;
@@ -34,23 +37,23 @@ public class MainController {
 
         List<Pokemon> pokemonList = getDataFromCache();
 
-        if(pokemonList != null /*&& !haveInternetConnection()*/){
+        if(pokemonList != null && !haveInternetConnection()){
             view.showList(pokemonList);
         }else{
             makeApiCall();
         }
     }
 
-    /*private boolean haveInternetConnection(){
+    private boolean haveInternetConnection(){
         //return true si connecté, return false dans le cas contraire
-        NetworkInfo network = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        NetworkInfo network = ((ConnectivityManager) view.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 
         if (network==null || !network.isConnected()){
             return false;
         }else{
             return true;
         }
-    }*/
+    }
 
     private void makeApiCall(){
         Call<RestPokemonResponse> call = Singletons.getPokeApi().getPokemonResponse();

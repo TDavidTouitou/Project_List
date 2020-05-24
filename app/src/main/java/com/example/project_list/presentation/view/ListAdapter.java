@@ -3,12 +3,14 @@ package com.example.project_list.presentation.view;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_list.R;
 import com.example.project_list.presentation.model.Pokemon;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,11 +35,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         TextView txtFooter;
         View layout;
 
+        ImageView icon;
+
         ViewHolder(View v) {
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            icon = v.findViewById(R.id.icon);
         }
     }
 
@@ -82,6 +87,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 listener.onItemClick(currentPokemon);
             }
         });
+        Picasso.get()
+                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(position+1)+".png")
+                .resize (150, 150)
+                .into (holder.icon);
+
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
